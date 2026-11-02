@@ -1,0 +1,128 @@
+{
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "top_a": 0,
+  "min_p": 0,
+  "frequency_penalty": 0,
+  "presence_penalty": 0,
+  "repetition_penalty": 1,
+  "openai_max_context": 200000,
+  "openai_max_tokens": 4096,
+  "max_context_unlocked": true,
+  "stream_openai": true,
+  "prompts": [
+    {
+      "identifier": "main",
+      "name": "Main Prompt",
+      "system_prompt": true,
+      "role": "system",
+      "content": "Write {{char}}'s next reply in a fictional roleplay between {{char}} and {{user}}. Stay in character and stay consistent with the character card, persona and world info. Reply in the same language {{user}} writes in. Never write {{user}}'s dialogue, actions or thoughts; leave those to {{user}}. Follow the [Writing style settings] block whenever it is present; if it is absent, write in a natural, balanced style."
+    },
+    {
+      "identifier": "modPhoneNote",
+      "name": "Mod Phone note",
+      "system_prompt": false,
+      "role": "system",
+      "content": "Writing style (reply length, tone, pacing, dialogue/narration balance and narrative emphasis) is controlled by the player through a phone-style mod menu. It is delivered as a [Writing style settings] block near the end of the chat. Treat that block as the top priority for style.",
+      "injection_position": 0,
+      "injection_depth": 4,
+      "forbid_overrides": false
+    },
+    {
+      "identifier": "worldInfoBefore",
+      "name": "World Info (before)",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "personaDescription",
+      "name": "Persona Description",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "charDescription",
+      "name": "Char Description",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "charPersonality",
+      "name": "Char Personality",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "scenario",
+      "name": "Scenario",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "worldInfoAfter",
+      "name": "World Info (after)",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "dialogueExamples",
+      "name": "Chat Examples",
+      "system_prompt": true,
+      "marker": true
+    },
+    {
+      "identifier": "chatHistory",
+      "name": "Chat History",
+      "system_prompt": true,
+      "marker": true
+    }
+  ],
+  "prompt_order": [
+    {
+      "character_id": 100001,
+      "order": [
+        {
+          "identifier": "main",
+          "enabled": true
+        },
+        {
+          "identifier": "modPhoneNote",
+          "enabled": true
+        },
+        {
+          "identifier": "worldInfoBefore",
+          "enabled": true
+        },
+        {
+          "identifier": "personaDescription",
+          "enabled": true
+        },
+        {
+          "identifier": "charDescription",
+          "enabled": true
+        },
+        {
+          "identifier": "charPersonality",
+          "enabled": true
+        },
+        {
+          "identifier": "scenario",
+          "enabled": true
+        },
+        {
+          "identifier": "worldInfoAfter",
+          "enabled": true
+        },
+        {
+          "identifier": "dialogueExamples",
+          "enabled": true
+        },
+        {
+          "identifier": "chatHistory",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}
